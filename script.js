@@ -2,6 +2,24 @@
 var generateBtn = document.querySelector("#generate");
 
 
+function generatePassword() {
+  console.log("Button is clicked")
+  var passwordLength = prompt("How long would you like your password?")
+if (passwordLength < 8 || passwordLength > 128) {
+  alert("Password must be between 8 and 128 characters")
+  generatePassword();
+}
+else if (passwordLength > 8 || passwordLength < 128) {
+  var passwordLowercase = confirm("Would you like to include lowercase characters?");
+  var passwordUppercase = confirm("Would you like to include uppercase characters?");
+  var passwordNumerical = confirm("Would you like to include numerical characters?");
+  var passwordSpecial = confirm("Would you like to include special characters?")
+}
+}
+
+
+  
+
 
   // 1. When button is clicked, prompt how long should password be. Between 8 and 128 characters.
   // 2. When length is confirmed, confirm prompt if the user would like: 
