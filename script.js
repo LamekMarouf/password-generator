@@ -1,36 +1,33 @@
-// Assignment Code
+// // Assignment Code
+
+//   // 1. When button is clicked, prompt how long should password be. Between 8 and 128 characters.
+//   // 2. When length is confirmed, confirm prompt if the user would like: 
+//     //  a) Lowercase Characters
+//     //  b) Uppercase Characters
+//     //  c) Numerical Characters
+//     //  d) Special Characters
+//   // 3. Validate that atleast one criteria is selected.
+//   // 4. Generate password
+//   // 5. Display password generated in box.
+
+// Start working code
+var passwordLength;
+var passwordNumerical;
+var passwordSpecial;
+var passwordUppercase;
+var passwordLowercase;
+
+special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+numerical = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+space = [];
+var choices;
+var toUpper = function (x) {
+    return x.toUpperCase();
+};
+uppercase = lowercase.map(toUpper);
+
 var generateBtn = document.querySelector("#generate");
-
-
-function generatePassword() {
-  console.log("Button is clicked")
-  var passwordLength = prompt("How long would you like your password?")
-if (passwordLength < 8 || passwordLength > 128) {
-  alert("Password must be between 8 and 128 characters")
-  generatePassword();
-}
-else if (passwordLength > 8 || passwordLength < 128) {
-  var passwordLowercase = confirm("Would you like to include lowercase characters?");
-  var passwordUppercase = confirm("Would you like to include uppercase characters?");
-  var passwordNumerical = confirm("Would you like to include numerical characters?");
-  var passwordSpecial = confirm("Would you like to include special characters?")
-}
-}
-
-
-  
-
-
-  // 1. When button is clicked, prompt how long should password be. Between 8 and 128 characters.
-  // 2. When length is confirmed, confirm prompt if the user would like: 
-    //  a) Lowercase Characters
-    //  b) Uppercase Characters
-    //  c) Numerical Characters
-    //  d) Special Characters
-  // 3. Validate that atleast one criteria is selected.
-  // 4. Generate password
-  // 5. Display password generated in box.
-
 
 // Write password to the #password input
 function writePassword() {
@@ -40,6 +37,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
