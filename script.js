@@ -47,6 +47,11 @@ function generatePassword() {
     if (!passwordSpecial && !passwordNumerical && !passwordUppercase && !passwordLowercase) {
         choices = alert("You must choose a criteria!");
     }
+    // If user selects all 4 options
+    else if (passwordSpecial && passwordNumerical && passwordUppercase && passwordLowercase) {
+
+        choices = special.concat(numerical, lowercase, uppercase);
+    }
     }
 // Write password to the #password input
 function writePassword() {
