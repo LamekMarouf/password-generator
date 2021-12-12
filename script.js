@@ -76,6 +76,17 @@ function generatePassword() {
     } else if (passwordNumerical && passwordUppercase) {
         choices = numerical.concat(uppercase);
     }
+    // If user selects 1 option
+    else if (passwordSpecial) {
+        choices = special;
+    } else if (passwordNumerical) {
+        choices = numerical;
+    } else if (passwordLowercase) {
+        choices = lowercase;
+    } else if (passwordUppercase) {
+        choices = space.concat(uppercase);
+    };
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
