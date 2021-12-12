@@ -52,6 +52,15 @@ function generatePassword() {
 
         choices = special.concat(numerical, lowercase, uppercase);
     }
+    // If user selects 3 options
+    else if (passwordSpecial && passwordNumerical && passwordUppercase) {
+        choices = special.concat(numerical, uppercase);
+    } else if (passwordSpecial && passwordNumerical && passwordLowercase) {
+        choices = special.concat(numerical, lowercase);
+    } else if (passwordSpecial && passwordLowercase && passwordUppercase) {
+        choices = special.concat(lowercase, uppercase);
+    } else if (passwordNumerical && passwordLowercase && passwordUppercase) {
+        choices = numerical.concat(lowercase, uppercase);
     }
 // Write password to the #password input
 function writePassword() {
