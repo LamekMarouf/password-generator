@@ -29,6 +29,21 @@ uppercase = lowercase.map(toUpper);
 
 var generateBtn = document.querySelector("#generate");
 
+
+
+function generatePassword() {
+    passwordLength = prompt("How many characters would you like your password? Choose between 8 and 128");
+    if (passwordLength < 8 || passwordLength > 128) {
+        passwordLength = prompt("You must choose between 8 and 128")
+        generatePassword();
+    } else {
+        passwordNumerical = confirm("Will this contain numbers?");
+        passwordSpecial = confirm("Will this contain special characters?");
+        passwordUppercase = confirm("Will this contain Uppercase letters?");
+        passwordLowercase = confirm("Will this contain Lowercase letters?");
+    };
+
+    }
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
