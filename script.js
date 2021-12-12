@@ -87,6 +87,17 @@ function generatePassword() {
         choices = space.concat(uppercase);
     };
 
+    var password = [];
+
+    for (var i = 0; i < passwordLength; i++) {
+        var pickChoices = choices[Math.floor(Math.random() * choices.length)];
+        password.push(pickChoices);
+    }
+    var password = password.join("");
+    UserInput(password);
+    return password;
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
