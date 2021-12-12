@@ -32,20 +32,20 @@ var generateBtn = document.querySelector("#generate");
 
 
 function generatePassword() {
-    passwordLength = prompt("How many characters would you like your password? Choose between 8 and 128");
+    passwordLength = prompt("How long would you like your password to be?");
     if (passwordLength < 8 || passwordLength > 128) {
         passwordLength = prompt("You must choose between 8 and 128")
         generatePassword();
     } else {
-        passwordNumerical = confirm("Will this contain numbers?");
-        passwordSpecial = confirm("Will this contain special characters?");
-        passwordUppercase = confirm("Will this contain Uppercase letters?");
-        passwordLowercase = confirm("Will this contain Lowercase letters?");
+      passwordLowercase = confirm("Would you like to include lowercase letters?");
+      passwordUppercase = confirm("Would you like to include uppercase letters?")
+      passwordNumerical = confirm("Would you like to include numbers?");
+      passwordSpecial = confirm("Would you like to include special characters?");
     };
 
     // If user does not choose a critera
     if (!passwordSpecial && !passwordNumerical && !passwordUppercase && !passwordLowercase) {
-        choices = alert("You must choose a criteria!");
+        choices = alert("You must choose atleast one option");
     }
     // If user selects all 4 options
     else if (passwordSpecial && passwordNumerical && passwordUppercase && passwordLowercase) {
