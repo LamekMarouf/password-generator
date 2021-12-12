@@ -43,6 +43,10 @@ function generatePassword() {
         passwordLowercase = confirm("Will this contain Lowercase letters?");
     };
 
+    // If user does not choose a critera
+    if (!passwordSpecial && !passwordNumerical && !passwordUppercase && !passwordLowercase) {
+        choices = alert("You must choose a criteria!");
+    }
     }
 // Write password to the #password input
 function writePassword() {
