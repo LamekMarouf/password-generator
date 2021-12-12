@@ -99,14 +99,13 @@ function generatePassword() {
 }
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+function UserInput(password) {
+    document.getElementById("password").textContent = password;
 
 }
 
-
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", function () {
+    var password = generatePassword();
+    document.getElementById("password").placeholder = password;
+});
